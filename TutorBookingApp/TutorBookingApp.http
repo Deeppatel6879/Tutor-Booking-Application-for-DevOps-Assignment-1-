@@ -1,0 +1,6 @@
+@TutorBookingApp_HostAddress = http://localhost:5188
+
+GET {{TutorBookingApp_HostAddress}}/
+Accept: text/html
+
+###
