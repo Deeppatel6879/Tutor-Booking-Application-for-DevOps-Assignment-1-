@@ -24,7 +24,4 @@ The website should open automatically in your browser.
 - `TutorBookingApp/wwwroot/js/booking.js` - form validation, local storage and booking functions
 - `TutorBookingApp/Program.cs` - ASP.NET Core startup code
 
-## Suggested team split
 
-- Deep: `index.html`, form structure and validation
-- Co-student: `style.css`, booking display and cancellation
