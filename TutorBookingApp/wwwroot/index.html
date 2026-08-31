@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Tutor Connect - Home</title>
 
@@ -19,9 +22,17 @@
             </a>
 
             <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="#tutors">Tutors</a>
-                <a href="booking.html">Book a Session</a>
+                <a href="index.html" class="active">
+                    Home
+                </a>
+
+                <a href="#tutors">
+                    Tutors
+                </a>
+
+                <a href="booking.html">
+                    Book a Session
+                </a>
             </nav>
 
         </div>
@@ -29,101 +40,233 @@
 
     <main>
 
-        <section class="simple-hero">
-            <div class="container">
+        <!-- Main introduction section -->
 
-                <h1>Find a Tutor</h1>
+        <section class="hero">
+            <div class="container hero-content">
 
-                <p>
-                    View  available tutors and book a session for help
-                   
-                </p>
+                <div class="hero-text">
 
-                <a href="#tutors" class="button primary-button">
-                    View Tutors
-                </a>
+                    <p class="small-heading">
+                        STUDENT SUPPORT
+                    </p>
 
-                <a href="booking.html" class="button secondary-button">
-                    Book a Study Session
-                </a>
+                    <h1>
+                        Tutor Booking Web App
+                    </h1>
 
+                    <p>
+                        Find an available tutor and book a session
+                        for help with your studies.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#tutors"
+                           class="button primary-button">
+                            View Tutors
+                        </a>
+
+                        <a href="booking.html"
+                           class="button secondary-button">
+                            Book a Session
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+
+                <div class="hero-box">
+
+                    <h2>How it works</h2>
+
+                    <div class="step">
+
+                        <span>1</span>
+
+                        <div>
+                            <h3>Choose a tutor</h3>
+
+                            <p>
+                                Select a tutor for your subject.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="step">
+
+                        <span>2</span>
+
+                        <div>
+                            <h3>Select a time</h3>
+
+                            <p>
+                                Choose your preferred date and time.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="step">
+
+                        <span>3</span>
+
+                        <div>
+                            <h3>Confirm your booking</h3>
+
+                            <p>
+                                Enter your details and submit the form.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </section>
+
+        <!-- Available tutors -->
 
         <section class="tutors-section" id="tutors">
             <div class="container">
 
                 <div class="section-heading">
-                    <h2>Available Tutors</h2>
+
+                    <p class="small-heading">
+                        AVAILABLE TUTORS
+                    </p>
+
+                    <h2>Meet Our Tutors</h2>
 
                     <p>
-                        Choose a tutor based on the subject you need help with.
+                        Select a tutor based on the subject you
+                        need help with.
                     </p>
+
                 </div>
 
                 <div class="tutor-grid">
 
+                    <!-- Programming tutor -->
+
                     <article class="tutor-card">
+
                         <div class="tutor-avatar">
-                            SW
+                            SJ
                         </div>
+
+                        <p class="subject-label">
+                            Programming
+                        </p>
 
                         <h3>Sarah Johns</h3>
 
                         <p>
-                            <strong>Subject:</strong> Programming
+                            Help with HTML, CSS, JavaScript and
+                            basic programming concepts.
                         </p>
 
-                        <p>
-                            Available Monday and Wednesday.
-                        </p>
+                        <div class="availability">
 
-                        <a href="booking.html?tutor=Sarah%20Williams&subject=Programming"
+                            <p>
+                                <strong>Days:</strong>
+                                Monday and Wednesday
+                            </p>
+
+                            <p>
+                                <strong>Time:</strong>
+                                10:00 AM–3:00 PM
+                            </p>
+
+                        </div>
+
+                        <a href="booking.html?tutor=Sarah%20Johns&subject=Programming"
                            class="button card-button">
                             Book Sarah
                         </a>
+
                     </article>
 
+                    <!-- Networking tutor -->
+
                     <article class="tutor-card">
+
                         <div class="tutor-avatar blue-avatar">
-                            JP
+                            JK
                         </div>
+
+                        <p class="subject-label">
+                            Networking
+                        </p>
 
                         <h3>James Kohen</h3>
 
                         <p>
-                            <strong>Subject:</strong> Networking
+                            Help with network design,
+                            troubleshooting and network security.
                         </p>
 
-                        <p>
-                            Available Tuesday and Thursday.
-                        </p>
+                        <div class="availability">
 
-                        <a href="booking.html?tutor=James%20Patel&subject=Networking"
+                            <p>
+                                <strong>Days:</strong>
+                                Tuesday and Thursday
+                            </p>
+
+                            <p>
+                                <strong>Time:</strong>
+                                9:00 AM–2:00 PM
+                            </p>
+
+                        </div>
+
+                        <a href="booking.html?tutor=James%20Kohen&subject=Networking"
                            class="button card-button">
                             Book James
                         </a>
+
                     </article>
 
+                    <!-- Database tutor -->
+
                     <article class="tutor-card">
+
                         <div class="tutor-avatar green-avatar">
                             EC
                         </div>
 
-                        <h3>Emily Cooper </h3>
-
-                        <p>
-                            <strong>Subject:</strong> Maths
+                        <p class="subject-label">
+                            Database Systems
                         </p>
 
+                        <h3>Emily Cooper</h3>
+
                         <p>
-                            Available Wednesday and Friday.
+                            Help with SQL, database design and
+                            data modelling.
                         </p>
 
-                        <a href="booking.html?tutor=Emily%20Chen&subject=Database%20Systems"
+                        <div class="availability">
+
+                            <p>
+                                <strong>Days:</strong>
+                                Wednesday and Friday
+                            </p>
+
+                            <p>
+                                <strong>Time:</strong>
+                                11:00 AM–4:00 PM
+                            </p>
+
+                        </div>
+
+                        <a href="booking.html?tutor=Emily%20Cooper&subject=Database%20Systems"
                            class="button card-button">
                             Book Emily
                         </a>
+
                     </article>
 
                 </div>
@@ -134,10 +277,16 @@
 
     <footer>
         <div class="container footer-content">
+
             <p>Tutor Connect</p>
-            <p>Created by Deep and Tyler.</p>
+
+            <p>
+                Created by Deep and Tyler.
+            </p>
+
         </div>
     </footer>
 
 </body>
+
 </html>

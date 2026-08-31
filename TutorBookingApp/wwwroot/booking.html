@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tutor Connect - Book a Session</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container navigation">
+
+            <a href="/index.html" class="logo">
+                Tutor Connect
+            </a>
+
+            <nav>
+                <a href="/index.html">
+                    Home
+                </a>
+
+                <a href="/index.html#tutors">
+                    Tutors
+                </a>
+
+                <a href="/booking.html" class="active">
+                    Book a Session
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="booking-heading">
+            <div class="container">
+
+                <p class="small-heading">
+                    TUTOR BOOKING
+                </p>
+
+                <h1>Book a Tutoring Session</h1>
+
+                <p>
+                    Complete the form below to arrange a session
+                    with one of our tutors.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="booking-content">
+            <div class="container booking-layout">
+
+                <form id="booking-form"
+                      class="booking-form"
+                      novalidate>
+
+                    <h2>Student Information</h2>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="student-name">
+                                Student name
+                            </label>
+
+                            <input type="text"
+                                   id="student-name"
+                                   placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-id">
+                                Student ID
+                            </label>
+
+                            <input type="text"
+                                   id="student-id"
+                                   placeholder="Enter your student ID">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               placeholder="name@student.ac.nz">
+                    </div>
+
+                    <h2>Session Information</h2>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="tutor">
+                                Tutor
+                            </label>
+
+                            <select id="tutor">
+                                <option value="">
+                                    Select a tutor
+                                </option>
+
+                                <option value="Sarah Johns">
+                                    Sarah Johns
+                                </option>
+
+                                <option value="James Kohen">
+                                    James Kohen
+                                </option>
+
+                                <option value="Emily Cooper">
+                                    Emily Cooper
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject
+                            </label>
+
+                            <select id="subject">
+                                <option value="">
+                                    Select a subject
+                                </option>
+
+                                <option value="Programming">
+                                    Programming
+                                </option>
+
+                                <option value="Networking">
+                                    Networking
+                                </option>
+
+                                <option value="Database Systems">
+                                    Database Systems
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label for="booking-date">
+                                Booking date
+                            </label>
+
+                            <input type="date"
+                                   id="booking-date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="booking-time">
+                                Booking time
+                            </label>
+
+                            <select id="booking-time">
+                                <option value="">
+                                    Select a time
+                                </option>
+
+                                <option value="10:00 AM">
+                                    10:00 AM
+                                </option>
+
+                                <option value="11:00 AM">
+                                    11:00 AM
+                                </option>
+
+                                <option value="1:00 PM">
+                                    1:00 PM
+                                </option>
+
+                                <option value="2:00 PM">
+                                    2:00 PM
+                                </option>
+
+                                <option value="3:00 PM">
+                                    3:00 PM
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="session-type">
+                            Session type
+                        </label>
+
+                        <select id="session-type">
+                            <option value="">
+                                Select a session type
+                            </option>
+
+                            <option value="Online">
+                                Online
+                            </option>
+
+                            <option value="In person">
+                                In person
+                            </option>
+
+                            <option value="Either">
+                                Either
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reason">
+                            What do you need help with?
+                        </label>
+
+                        <textarea id="reason"
+                                  rows="5"
+                                  placeholder="Describe what you need help with"></textarea>
+                    </div>
+
+                    <p id="form-message" role="status"></p>
+
+                    <button type="submit"
+                            class="button primary-button submit-button">
+                        Confirm Booking
+                    </button>
+
+                </form>
+
+                <aside class="booking-information">
+
+                    <h2>Booking Information</h2>
+
+                    <p>
+                        Complete all fields before confirming your
+                        tutoring session.
+                    </p>
+
+                    <ul>
+                        <li>Select the correct tutor and subject.</li>
+                        <li>Choose an available date and time.</li>
+                        <li>Enter a valid email address.</li>
+                        <li>Describe what you need help with.</li>
+                    </ul>
+
+                    <a href="/index.html#tutors">
+                        Return to available tutors
+                    </a>
+
+                </aside>
+
+            </div>
+        </section>
+
+        <section class="current-bookings">
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <p class="small-heading">
+                        YOUR SCHEDULE
+                    </p>
+
+                    <h2>Current Bookings</h2>
+
+                    <p id="booking-count">
+                        Your confirmed bookings will appear here.
+                    </p>
+
+                </div>
+
+                <div id="booking-list"></div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+
+            <p>Tutor Connect</p>
+
+            <p>
+                Created by Deep and Tyler.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="js/booking.js"></script>
+
+</body>
+
+</html>

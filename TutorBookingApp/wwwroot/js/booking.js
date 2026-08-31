@@ -1,38 +1,60 @@
+// Get the booking form elements
+
 const bookingForm = document.getElementById("booking-form");
 const bookingList = document.getElementById("booking-list");
 const bookingCount = document.getElementById("booking-count");
 const formMessage = document.getElementById("form-message");
 
+const studentNameInput = document.getElementById("student-name");
+const studentIdInput = document.getElementById("student-id");
+const emailInput = document.getElementById("email");
+const tutorInput = document.getElementById("tutor");
+const subjectInput = document.getElementById("subject");
+const bookingDateInput = document.getElementById("booking-date");
+const bookingTimeInput = document.getElementById("booking-time");
+const sessionTypeInput = document.getElementById("session-type");
+const reasonInput = document.getElementById("reason");
+
+
+// Load saved bookings from the browser
+
 let bookings = JSON.parse(
     localStorage.getItem("tutorBookings")
 ) || [];
 
-const dateInput = document.getElementById("booking-date");
 
-dateInput.min = new Date().toISOString().split("T")[0];
+// Prevent users from selecting a date in the past
 
-/*
-    Read the tutor and subject from the home-page link.
-    Example:
-    booking.html?tutor=Sarah%20Williams&subject=Programming
-*/
+const today = new Date().toISOString().split("T")[0];
 
-const pageParameters = new URLSearchParams(window.location.search);
+bookingDateInput.min = today;
+
+
+// Read the selected tutor and subject from the homepage link
+
+const pageParameters = new URLSearchParams(
+    window.location.search
+);
 
 const selectedTutor = pageParameters.get("tutor");
 const selectedSubject = pageParameters.get("subject");
 
+
+// Automatically select the tutor
+
 if (selectedTutor) {
-    document.getElementById("tutor").value = selectedTutor;
+    tutorInput.value = selectedTutor;
 }
+
+
+// Automatically select the subject
 
 if (selectedSubject) {
-    document.getElementById("subject").value = selectedSubject;
+    subjectInput.value = selectedSubject;
 }
 
-/*
-    Submit the booking form
-*/
+
+// Handle the booking form submission
 
 bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -40,54 +62,39 @@ bookingForm.addEventListener("submit", function (event) {
     const booking = {
         id: Date.now(),
 
-        studentName: document
-            .getElementById("student-name")
-            .value
-            .trim(),
+        studentName: studentNameInput.value.trim(),
 
-        studentId: document
-            .getElementById("student-id")
-            .value
-            .trim(),
+        studentId: studentIdInput.value.trim(),
 
-        email: document
-            .getElementById("email")
-            .value
-            .trim(),
+        email: emailInput.value.trim(),
 
-        tutor: document.getElementById("tutor").value,
+        tutor: tutorInput.value,
 
-        subject: document.getElementById("subject").value,
+        subject: subjectInput.value,
 
-        date: document.getElementById("booking-date").value,
+        date: bookingDateInput.value,
 
-        time: document.getElementById("booking-time").value,
+        time: bookingTimeInput.value,
 
-        sessionType: document
-            .getElementById("session-type")
-            .value,
+        sessionType: sessionTypeInput.value,
 
-        reason: document
-            .getElementById("reason")
-            .value
-            .trim()
+        reason: reasonInput.value.trim()
     };
 
-    const requiredValues = [
-        booking.studentName,
-        booking.studentId,
-        booking.email,
-        booking.tutor,
-        booking.subject,
-        booking.date,
-        booking.time,
-        booking.sessionType,
-        booking.reason
-    ];
 
-    if (requiredValues.some(function (value) {
-        return value === "";
-    })) {
+    // Check that every field has been completed
+
+    if (
+        booking.studentName === "" ||
+        booking.studentId === "" ||
+        booking.email === "" ||
+        booking.tutor === "" ||
+        booking.subject === "" ||
+        booking.date === "" ||
+        booking.time === "" ||
+        booking.sessionType === "" ||
+        booking.reason === ""
+    ) {
         showMessage(
             "Please complete every field before submitting.",
             "error"
@@ -95,6 +102,9 @@ bookingForm.addEventListener("submit", function (event) {
 
         return;
     }
+
+
+    // Check the email address
 
     const emailPattern = /^\S+@\S+\.\S+$/;
 
@@ -107,9 +117,8 @@ bookingForm.addEventListener("submit", function (event) {
         return;
     }
 
-    const today = new Date()
-        .toISOString()
-        .split("T")[0];
+
+    // Check that the booking date is not in the past
 
     if (booking.date < today) {
         showMessage(
@@ -120,12 +129,24 @@ bookingForm.addEventListener("submit", function (event) {
         return;
     }
 
+
+    // Add the new booking
+
     bookings.push(booking);
+
+
+    // Save and display the booking
 
     saveBookings();
     displayBookings();
 
+
+    // Clear the form
+
     bookingForm.reset();
+
+
+    // Show confirmation
 
     showMessage(
         "Your tutoring session has been booked successfully.",
@@ -133,9 +154,8 @@ bookingForm.addEventListener("submit", function (event) {
     );
 });
 
-/*
-    Save bookings in the browser
-*/
+
+// Save bookings in local storage
 
 function saveBookings() {
     localStorage.setItem(
@@ -144,9 +164,8 @@ function saveBookings() {
     );
 }
 
-/*
-    Display the saved bookings
-*/
+
+// Display all current bookings
 
 function displayBookings() {
     if (bookings.length === 0) {
@@ -158,8 +177,8 @@ function displayBookings() {
                 <h3>No bookings yet</h3>
 
                 <p>
-                    Complete the booking form to arrange your
-                    first tutoring session.
+                    Complete the form to arrange your first
+                    tutoring session.
                 </p>
             </div>
         `;
@@ -167,13 +186,23 @@ function displayBookings() {
         return;
     }
 
-    bookingCount.textContent =
-        bookings.length +
-        (bookings.length === 1
-            ? " upcoming session"
-            : " upcoming sessions");
+
+    // Update the booking count
+
+    if (bookings.length === 1) {
+        bookingCount.textContent = "1 upcoming session";
+    } else {
+        bookingCount.textContent =
+            bookings.length + " upcoming sessions";
+    }
+
+
+    // Clear the old booking display
 
     bookingList.innerHTML = "";
+
+
+    // Create a card for each booking
 
     bookings.forEach(function (booking) {
         const bookingCard = document.createElement("article");
@@ -181,8 +210,11 @@ function displayBookings() {
         bookingCard.className = "booking-card";
 
         bookingCard.innerHTML = `
-            <div>
-                <h3>${escapeText(booking.tutor)}</h3>
+            <div class="booking-details">
+
+                <h3>
+                    ${escapeText(booking.tutor)}
+                </h3>
 
                 <p>
                     <strong>Subject:</strong>
@@ -192,6 +224,11 @@ function displayBookings() {
                 <p>
                     <strong>Student:</strong>
                     ${escapeText(booking.studentName)}
+                </p>
+
+                <p>
+                    <strong>Student ID:</strong>
+                    ${escapeText(booking.studentId)}
                 </p>
 
                 <p>
@@ -205,9 +242,15 @@ function displayBookings() {
                 </p>
 
                 <p>
-                    <strong>Session:</strong>
+                    <strong>Session type:</strong>
                     ${escapeText(booking.sessionType)}
                 </p>
+
+                <p>
+                    <strong>Reason:</strong>
+                    ${escapeText(booking.reason)}
+                </p>
+
             </div>
 
             <button
@@ -223,9 +266,8 @@ function displayBookings() {
     });
 }
 
-/*
-    Cancel a booking
-*/
+
+// Cancel a booking
 
 function cancelBooking(bookingId) {
     const confirmed = confirm(
@@ -242,20 +284,23 @@ function cancelBooking(bookingId) {
 
     saveBookings();
     displayBookings();
+
+    showMessage(
+        "The booking has been cancelled.",
+        "success"
+    );
 }
 
-/*
-    Display validation or confirmation messages
-*/
 
-function showMessage(message, type) {
+// Show an error or success message
+
+function showMessage(message, messageType) {
     formMessage.textContent = message;
-    formMessage.className = type;
+    formMessage.className = messageType;
 }
 
-/*
-    Prevent form information from being inserted as HTML
-*/
+
+// Prevent entered text from being treated as HTML
 
 function escapeText(value) {
     const temporaryElement = document.createElement("div");
@@ -264,5 +309,8 @@ function escapeText(value) {
 
     return temporaryElement.innerHTML;
 }
+
+
+// Display previously saved bookings when the page loads
 
 displayBookings();
