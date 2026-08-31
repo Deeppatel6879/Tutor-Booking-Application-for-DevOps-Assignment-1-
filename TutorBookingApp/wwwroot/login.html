@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Connect - Student Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container navigation">
+            <a href="index.html" class="logo">
+                Tutor Connect
+            </a>
+
+            <nav id="main-nav">
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#tutors">
+                    Tutors
+                </a>
+
+                <a href="booking.html">
+                    Book a Session
+                </a>
+
+                <a href="login.html" class="active" id="nav-auth-link">
+                    Student Login
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <p class="small-heading">STUDENT ACCESS</p>
+                        <h1>Sign In to Tutor Connect</h1>
+                        <p>Sign in with your student credentials to manage bookings.</p>
+                    </div>
+
+                    <div id="auth-message" class="auth-alert"></div>
+
+                    <form id="login-form" class="auth-form" novalidate>
+                        <div class="form-group">
+                            <label for="login-student-id">Student ID</label>
+                            <input type="text" id="login-student-id" placeholder="e.g. 22503513" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-student-name">Full Name</label>
+                            <input type="text" id="login-student-name" placeholder="e.g. Yusen Xu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-email">Student Email</label>
+                            <input type="email" id="login-email" placeholder="yusen.xu@student.weltec.ac.nz" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                        </div>
+
+                        <label class="auth-checkbox">
+                            <input type="checkbox" id="remember-me" checked>
+                            Remember my session on this computer
+                        </label>
+
+                        <button type="submit" class="button primary-button" style="width: 100%; margin-top: 8px;">
+                            Sign In to Student Account
+                        </button>
+                    </form>
+
+                    <div class="auth-footer">
+                        Need help? Return to <a href="index.html">Home</a> or <a href="booking.html">Book a Session</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>Tutor Connect</p>
+            <p>Created by Deep and Tyler.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
