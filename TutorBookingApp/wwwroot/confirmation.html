@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Connect - Booking Confirmation Ticket</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container navigation">
+            <a href="index.html" class="logo">
+                Tutor Connect
+            </a>
+
+            <nav>
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#tutors">
+                    Tutors
+                </a>
+
+                <a href="booking.html">
+                    Book a Session
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <div class="container ticket-container">
+
+                <div class="ticket-card" id="ticket-content">
+                    <!-- Ticket Header -->
+                    <div class="ticket-header">
+                        <div class="ticket-status-wrap">
+                            <div class="ticket-icon">✓</div>
+                            <div>
+                                <h1>Tutoring Session Confirmed</h1>
+                                <p>Your appointment has been successfully scheduled and recorded.</p>
+                            </div>
+                        </div>
+
+                        <div class="ticket-ref-box">
+                            <div class="ticket-ref-label">Reference ID</div>
+                            <div class="ticket-ref-id" id="ticket-ref-id">#TB-2026-8821</div>
+                        </div>
+                    </div>
+
+                    <!-- Ticket Body -->
+                    <div class="ticket-body">
+                        <div class="ticket-main-info">
+                            <h3 class="detail-section-title">Session Details</h3>
+
+                            <div class="tutor-highlight-box">
+                                <div class="tutor-badge-avatar" id="tutor-avatar">T</div>
+                                <div class="tutor-badge-info">
+                                    <h4 id="conf-tutor-name">Sarah Johns</h4>
+                                    <p id="conf-subject-name">Subject: Programming (Python / Java)</p>
+                                </div>
+                            </div>
+
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Booking Date</span>
+                                    <span class="detail-value" id="conf-date">2026-09-02</span>
+                                </div>
+
+                                <div class="detail-item">
+                                    <span class="detail-label">Time Slot</span>
+                                    <span class="detail-value" id="conf-time">10:00 AM - 11:00 AM</span>
+                                </div>
+
+                                <div class="detail-item">
+                                    <span class="detail-label">Session Format</span>
+                                    <span class="detail-value" id="conf-session-type">In-Person</span>
+                                </div>
+
+                                <div class="detail-item">
+                                    <span class="detail-label">Assistance Request</span>
+                                    <span class="detail-value" id="conf-reason">Assignment 1 DevOps Architecture</span>
+                                </div>
+                            </div>
+
+                            <h3 class="detail-section-title">Student Information</h3>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Student Name</span>
+                                    <span class="detail-value" id="conf-student-name">Yusen Xu</span>
+                                </div>
+
+                                <div class="detail-item">
+                                    <span class="detail-label">Student ID</span>
+                                    <span class="detail-value" id="conf-student-id">22503513</span>
+                                </div>
+
+                                <div class="detail-item" style="grid-column: span 2;">
+                                    <span class="detail-label">Email Address</span>
+                                    <span class="detail-value" id="conf-email">yusen.xu@student.weltec.ac.nz</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ticket Sidebar Actions -->
+                        <div class="ticket-sidebar">
+                            <div class="location-info">
+                                <h4>Meeting Instructions</h4>
+                                <p id="location-text">
+                                    Please arrive 5 minutes early at <strong>WelTec Petone Campus, Building B (Study Hub Room 204)</strong>.
+                                </p>
+                                <p style="font-size: 12px; color: var(--grey);">
+                                    Bring your student ID card and course materials.
+                                </p>
+                            </div>
+
+                            <div class="ticket-actions">
+                                <button type="button" class="action-btn btn-primary-ticket" id="btn-print-ticket">
+                                    🖨️ Print / Save Ticket (PDF)
+                                </button>
+
+                                <button type="button" class="action-btn btn-calendar" id="btn-add-calendar">
+                                    📅 Add to Calendar (.ics)
+                                </button>
+
+                                <a href="booking.html" class="action-btn btn-outline-ticket">
+                                    ➕ Book Another Session
+                                </a>
+
+                                <a href="index.html" class="action-btn btn-outline-ticket">
+                                    🏠 Return to Home
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>Tutor Connect</p>
+            <p>Created by Deep and Tyler.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+
+</html>
