@@ -1,0 +1,91 @@
+/* Confirmation Page - Simple Student Style matching style.css */
+
+.confirmation-section {
+    padding: 60px 0;
+}
+
+.confirmation-box {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 35px 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.confirmation-title {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.confirmation-title h1 {
+    font-size: 24px;
+    color: var(--dark-blue);
+    margin: 5px 0 10px;
+}
+
+.confirmation-title p {
+    color: var(--grey);
+    font-size: 14px;
+    margin: 0;
+}
+
+.confirmation-details {
+    background: var(--light-blue);
+    border: 1px solid #d4ebf5;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.confirmation-details h2 {
+    margin: 0 0 15px;
+    font-size: 17px;
+    color: var(--dark-blue);
+}
+
+.confirmation-details p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.confirmation-details strong {
+    color: var(--dark-blue);
+}
+
+.confirmation-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.confirmation-buttons .button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Simple Print */
+@media print {
+    .main-header,
+    .main-footer,
+    .confirmation-buttons {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .confirmation-section {
+        padding: 0;
+    }
+
+    .confirmation-box {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}

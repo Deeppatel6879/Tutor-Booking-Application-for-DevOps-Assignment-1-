@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutor Connect - Booking Confirmation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/confirmation.css">
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container navigation">
+            <a href="index.html" class="logo">
+                Tutor Connect
+            </a>
+
+            <nav>
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#tutors">
+                    Tutors
+                </a>
+
+                <a href="booking.html">
+                    Book a Session
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="confirmation-section">
+            <div class="container">
+                <div class="confirmation-box">
+                    <div class="confirmation-title">
+                        <p class="small-heading">BOOKING SUCCESS</p>
+                        <h1>Session Confirmed</h1>
+                        <p>Thank you. Your tutoring session has been arranged.</p>
+                    </div>
+
+                    <div class="confirmation-details">
+                        <h2>Booking Summary</h2>
+                        <p><strong>Student Name:</strong> <span id="conf-student-name">Yusen Xu</span></p>
+                        <p><strong>Student ID:</strong> <span id="conf-student-id">22503513</span></p>
+                        <p><strong>Email:</strong> <span id="conf-email">yusen.xu@student.weltec.ac.nz</span></p>
+                        <p><strong>Tutor:</strong> <span id="conf-tutor-name">Sarah Johns</span></p>
+                        <p><strong>Subject:</strong> <span id="conf-subject-name">Programming</span></p>
+                        <p><strong>Date:</strong> <span id="conf-date">2026-09-02</span></p>
+                        <p><strong>Time:</strong> <span id="conf-time">10:00 AM - 11:00 AM</span></p>
+                        <p><strong>Session Type:</strong> <span id="conf-session-type">In-Person</span></p>
+                        <p><strong>Topic / Question:</strong> <span id="conf-reason">DevOps Architecture</span></p>
+                    </div>
+
+                    <div class="confirmation-buttons">
+                        <button type="button" class="button primary-button" onclick="window.print()">
+                            Print Confirmation
+                        </button>
+                        <a href="booking.html" class="button secondary-button">
+                            Book Another Session
+                        </a>
+                        <a href="index.html" class="button secondary-button">
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <p>Tutor Connect</p>
+            <p>Created by Deep and Tyler.</p>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+
+</html>
