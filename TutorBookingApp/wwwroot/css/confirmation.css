@@ -1,271 +1,91 @@
-/* Confirmation Ticket Styles - Aligned with Tutor Connect Theme */
+/* Confirmation Page - Simple Student Style matching style.css */
 
 .confirmation-section {
-    padding: 50px 0 80px;
-    min-height: calc(100vh - 200px);
+    padding: 60px 0;
 }
 
-.ticket-container {
-    max-width: 820px;
+.confirmation-box {
+    max-width: 650px;
     margin: 0 auto;
-}
-
-.ticket-card {
     background: var(--white);
-    border-radius: 12px;
+    padding: 35px 30px;
+    border-radius: 8px;
     border: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(23, 59, 87, 0.08);
-    overflow: hidden;
 }
 
-/* Ticket Header Banner */
-.ticket-header {
-    background: linear-gradient(135deg, var(--dark-blue), #1e4e74);
-    color: var(--white);
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid var(--orange);
+.confirmation-title {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.ticket-status-wrap {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.ticket-icon {
-    width: 48px;
-    height: 48px;
-    background: #10b981;
-    color: var(--white);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
+.confirmation-title h1 {
     font-size: 24px;
-    font-weight: bold;
-}
-
-.ticket-header h1 {
-    font-size: 22px;
-    margin: 0 0 4px;
-    color: var(--white);
-}
-
-.ticket-header p {
-    font-size: 13.5px;
-    margin: 0;
-    opacity: 0.9;
-}
-
-.ticket-ref-box {
-    text-align: right;
-    background: rgba(255, 255, 255, 0.12);
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.ticket-ref-label {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.8;
-}
-
-.ticket-ref-id {
-    font-size: 17px;
-    font-weight: bold;
-    font-family: Consolas, monospace;
-    letter-spacing: 0.5px;
-}
-
-/* Ticket Body Grid */
-.ticket-body {
-    padding: 35px;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 30px;
-}
-
-.detail-section-title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--orange);
-    font-weight: bold;
-    margin: 0 0 16px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 6px;
-}
-
-.detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 20px;
-    margin-bottom: 24px;
-}
-
-.detail-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.detail-label {
-    font-size: 12px;
-    color: var(--grey);
-    font-weight: bold;
-}
-
-.detail-value {
-    font-size: 14px;
     color: var(--dark-blue);
-    font-weight: 600;
+    margin: 5px 0 10px;
 }
 
-.tutor-highlight-box {
+.confirmation-title p {
+    color: var(--grey);
+    font-size: 14px;
+    margin: 0;
+}
+
+.confirmation-details {
     background: var(--light-blue);
-    border: 1px solid #c9e4f2;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    border: 1px solid #d4ebf5;
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 25px;
 }
 
-.tutor-badge-avatar {
-    width: 44px;
-    height: 44px;
-    background: var(--blue);
-    color: var(--white);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: bold;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-.tutor-badge-info h4 {
-    margin: 0 0 3px;
+.confirmation-details h2 {
+    margin: 0 0 15px;
+    font-size: 17px;
     color: var(--dark-blue);
-    font-size: 15px;
 }
 
-.tutor-badge-info p {
-    margin: 0;
-    color: var(--grey);
-    font-size: 13px;
+.confirmation-details p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: var(--text);
 }
 
-/* Sidebar Actions */
-.ticket-sidebar {
-    background: var(--background);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.location-info {
-    margin-bottom: 20px;
-}
-
-.location-info h4 {
-    margin: 0 0 8px;
+.confirmation-details strong {
     color: var(--dark-blue);
+}
+
+.confirmation-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.confirmation-buttons .button {
+    text-align: center;
+    text-decoration: none;
     font-size: 14px;
 }
 
-.location-info p {
-    margin: 0 0 6px;
-    font-size: 13px;
-    color: var(--grey);
-    line-height: 1.5;
-}
-
-.ticket-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.action-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 100%;
-    padding: 11px 16px;
-    border-radius: 6px;
-    font-size: 13.5px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    box-sizing: border-box;
-    transition: all 0.2s ease;
-}
-
-.btn-primary-ticket {
-    background: var(--blue);
-    color: var(--white);
-    border: none;
-}
-
-.btn-primary-ticket:hover {
-    background: #1f648b;
-}
-
-.btn-calendar {
-    background: #e0f2fe;
-    color: #0369a1;
-    border: 1px solid #bae6fd;
-}
-
-.btn-calendar:hover {
-    background: #bae6fd;
-}
-
-.btn-outline-ticket {
-    background: var(--white);
-    color: var(--dark-blue);
-    border: 1px solid var(--border);
-}
-
-.btn-outline-ticket:hover {
-    background: #f1f5f9;
-}
-
-/* Print Specific Rules */
+/* Simple Print */
 @media print {
     .main-header,
     .main-footer,
-    .ticket-actions,
-    .btn-logout {
+    .confirmation-buttons {
         display: none !important;
     }
 
     body {
-        background: #fff !important;
+        background: #fff;
     }
 
     .confirmation-section {
-        padding: 0 !important;
+        padding: 0;
     }
 
-    .ticket-card {
-        box-shadow: none !important;
-        border: 1px solid #000 !important;
-    }
-
-    .ticket-header {
-        background: #173b57 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
+    .confirmation-box {
+        border: none;
+        box-shadow: none;
+        padding: 0;
     }
 }
