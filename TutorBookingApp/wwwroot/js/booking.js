@@ -146,12 +146,15 @@ bookingForm.addEventListener("submit", function (event) {
     bookingForm.reset();
 
 
-    // Show confirmation
-
+    // Show confirmation and redirect to ticket
     showMessage(
-        "Your tutoring session has been booked successfully.",
+        'Your tutoring session has been booked successfully! Opening confirmation ticket...',
         "success"
     );
+
+    setTimeout(function () {
+        window.location.href = `confirmation.html?id=${booking.id}`;
+    }, 1000);
 });
 
 
@@ -253,13 +256,18 @@ function displayBookings() {
 
             </div>
 
-            <button
-                type="button"
-                class="cancel-button"
-                onclick="cancelBooking(${booking.id})"
-            >
-                Cancel Booking
-            </button>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <a href="confirmation.html?id=${booking.id}" class="button secondary-button" style="padding: 8px 14px; font-size: 13px; text-decoration: none; text-align: center;">
+                    View Ticket
+                </a>
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="cancelBooking(${booking.id})"
+                >
+                    Cancel Booking
+                </button>
+            </div>
         `;
 
         bookingList.appendChild(bookingCard);
